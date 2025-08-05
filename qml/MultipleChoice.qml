@@ -11,7 +11,7 @@ Item {
 
     MultipeChoiceQuestion {
         id: question1
-        timer: 40
+        timer: 60
         questionText: qsTr("All birds have feathers. A penguin is a bird.")
         answerText1: qsTr("If an animal has feathers, then it is a bird.")
         answerText2: qsTr("If something is a bird, then it has feathers.")
@@ -22,7 +22,7 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question2
-        timer: 40
+        timer: 60
         questionText: qsTr("Everyone who graduates from medical school is a doctor.")
         answerText1: qsTr("Everyone who is a doctor graduated from medical school.")
         answerText2: qsTr("Some doctors didn’t go to medical school.")
@@ -33,7 +33,7 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question3
-        timer: 40
+        timer: 60
         questionText: qsTr("If it is raining, then the ground is wet.")
         answerText1: qsTr("If the ground is wet, then it is raining")
         answerText2: qsTr("If the ground is not wet, then it is not raining.")
@@ -44,7 +44,7 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question4
-        timer: 80
+        timer: 100
         questionText: qsTr("If a card has a vowel on it, then it has an even number on the other side. You see these four cards: A | K | 4 | 7. Which card must you turn to test if the rule is true?")
         answerText1: qsTr("A")
         answerText2: qsTr("K")

@@ -8,19 +8,19 @@ Item {
 
     TestCreativityQuestions {
         id: question1
-        timer: 275
+        timer: 320
         questionText: qsTr("Name as many uses as you can for a brick.")
         pNextQuestion: mSeriesTest
     }
     TestCreativityQuestions {
         id: question2
-        timer: 275
+        timer: 320
         questionText: qsTr("Think of as many unusual uses as possible for a shoe.")
         pNextQuestion: mSeriesTest
     }
     TestCreativityQuestions {
         id: question3
-        timer: 275
+        timer: 320
         questionText: qsTr("Think of as many unusual uses as possible for a plastic bottle.")
         pNextQuestion: mSeriesTest
     }

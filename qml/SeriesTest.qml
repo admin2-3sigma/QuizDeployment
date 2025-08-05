@@ -8,7 +8,7 @@ Item {
 
     SeriesTestQuestion {
         id: question1
-        timer: 15
+        timer: 30
         pNextQuestion: question2
         myFunction: function(num, i) {
             return num + 7
@@ -16,7 +16,7 @@ Item {
     }
     SeriesTestQuestion {
         id: question2
-        timer: 20
+        timer: 50
         pNextQuestion: question3
         myFunction: function(num, i) {
             return num*2+3
@@ -24,7 +24,7 @@ Item {
     }
     SeriesTestQuestion {
         id: question3
-        timer: 20
+        timer: 50
         pNextQuestion: question4
         myFunction: function(num, i) {
             return num*2-3
@@ -32,7 +32,7 @@ Item {
     }
     SeriesTestQuestion {
         id: question4
-        timer: 30
+        timer: 50
         pNextQuestion: question5
         firstXNumber: 5
         myFunction: function(num, i) {
@@ -44,7 +44,7 @@ Item {
     }
     SeriesTestQuestion {
         id: question5
-        timer: 40
+        timer: 60
         pNextQuestion: mEndText
         firstXNumber: 5
         myFunction: function(num, i) {

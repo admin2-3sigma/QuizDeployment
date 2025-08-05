@@ -15,15 +15,7 @@ App {
             id: mPage
             title: qsTr("Main Page")
             property int score: 0
-
-
-
-            Component.onCompleted: {
-                //settings.language = "en_EN" // for testing purpose only
-                translation.useSystemLanguage = false // set it to true to always start with the currently active operating system language – set it to false to allow changing language with settings.language
-                var currLang = Qt.locale().name // Qt function that returns the default language
-                currLang = forceToAvailableLanguages(currLang)
-            }
+            property string url: "Test.csv"
 
             Column {
                 id: start
@@ -55,10 +47,9 @@ App {
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: "Start"
                     onClicked: {
-                        mPage.mName = input.text
-                        var oldText = FileUtils.readFile("output.csv")
+                        var oldText = FileUtils.readFile(mPage.url)
                         var newText = oldText + "\n" + input.text
-                        if (!FileUtils.writeFile("output.csv", newText)) {
+                        if (!FileUtils.writeFile(mPage.url, newText)) {
                             console.log("Failed to write output.csv")
                         }
                         mMultipleChoice.visible = true
@@ -97,9 +88,9 @@ App {
                 }
 
                 onVisibleChanged: {
-                    var oldText = FileUtils.readFile("output.csv")
+                    var oldText = FileUtils.readFile(mPage.url)
                     var newText = oldText + "\n" + "Score" + "," + mPage.score
-                    if (!FileUtils.writeFile("output.csv", newText)) {
+                    if (!FileUtils.writeFile(mPage.url, newText)) {
                         console.log("Failed to write output.csv")
                     }
 

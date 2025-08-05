@@ -98,15 +98,15 @@ Item {
     function checkSolution() {
         test.visible = false
 
-        var oldText = FileUtils.readFile("output.csv")
+        var oldText = FileUtils.readFile(mPage.url)
         var newText = oldText + "\n" + toCSVField(questionText)
 
         for (let i = 0; i < inputFields.length; ++i) {
             newText += "," + toCSVField(inputFields[i].text)
         }
 
-        if (!FileUtils.writeFile("output.csv", newText)) {
-            console.log("Could not write to: " + "output.csv")
+        if (!FileUtils.writeFile(mPage.url, newText)) {
+            console.log("Could not write to: " + mPage.url)
         }
 
         if (pNextQuestion) {

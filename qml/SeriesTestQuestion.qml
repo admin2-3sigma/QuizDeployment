@@ -105,9 +105,9 @@ Item {
 
     function checkSolution() {
         test.visible = false
-        var oldText = FileUtils.readFile("output.csv")
+        var oldText = FileUtils.readFile(mPage.url)
         var newText = oldText + "\n" + questionText + "," + input.text + "," + (input.text === answer.toString())
-        if (!FileUtils.writeFile("output.csv", newText)) {
+        if (!FileUtils.writeFile(mPage.url, newText)) {
             console.log("Failed to write output.csv")
         }
         if (input.text === answer.toString()){

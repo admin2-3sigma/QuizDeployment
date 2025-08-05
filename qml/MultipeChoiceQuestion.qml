@@ -92,9 +92,9 @@ Item {
             solved = true
             mPage.addScore()
         }
-        var oldText = FileUtils.readFile("output.csv")
+        var oldText = FileUtils.readFile(mPage.url)
         var newText = oldText + "\n" + toCSVField(questionText) + "," + solved
-        if (!FileUtils.writeFile("output.csv", newText)) {
+        if (!FileUtils.writeFile(mPage.url, newText)) {
             console.log("Failed to write output.csv")
         }
         if (pNextQuestion) {
