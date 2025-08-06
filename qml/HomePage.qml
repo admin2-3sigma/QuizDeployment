@@ -14,6 +14,37 @@ AppPage {
         anchors.verticalCenter: parent.verticalCenter
         spacing: 10
 
+        Row {
+            spacing: 10
+            Text {
+                id: numMultipleChoiceInput
+                text: "Number of multiple choice questions (1 to 4; default is 3)"
+                font.pixelSize: 40
+            }
+
+            Rectangle {
+                width: 100; height: 66
+                color: "lightgray"
+                border.color: "black"
+
+                TextInput {
+                    id: numberInput
+                    anchors.fill: parent
+                    anchors.margins: 10
+                    font.pixelSize: 36
+                    focus: true
+                    inputMethodHints: Qt.ImhDigitsOnly
+                    validator: IntValidator { bottom: 1; top: 4 }  // Adjust range as needed
+                    onTextChanged: {
+                        if (text !== "" && (parseInt(text) < 1 || parseInt(text) > 4)) {
+                            text = ""
+                        }
+                    }
+                }
+
+            }
+        }
+
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Please write your name.")
@@ -39,6 +70,7 @@ AppPage {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Start")
             onClicked: {
+                mPage.url = toFileName(input.text)
                 var oldText = FileUtils.readFile(mPage.url)
                 var newText = oldText + "\n" + input.text
                 if (!FileUtils.writeFile(mPage.url, newText)) {
@@ -46,16 +78,21 @@ AppPage {
                 }else {
                     console.log("Wrote to", mPage.url)
                 }
+                if (numberInput.text) {
+                    mMultipleChoice.numOfQuestions = numberInput.text
+                }
+
                 mMultipleChoice.visible = true
                 start.visible = false
             }
         }
         Row {
+            anchors.horizontalCenter: parent.horizontalCenter
             spacing: 10
 
             AppButton {
                 visible: settings.language !== "en_EN.qm"
-                text: qsTr("Switch to en_EN")
+                text: "EN"
                 onClicked: {
                     settings.language = "en_EN.qm"
                     nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
@@ -63,26 +100,8 @@ AppPage {
             }
 
             AppButton {
-                visible: settings.language !== "de_DE.qm"
-                text: qsTr("Switch to de_DE")
-                onClicked: {
-                    settings.language = "de_DE.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-
-            AppButton {
-                visible: settings.language !== "de_AT.qm"
-                text: qsTr("Switch to de_AT")
-                onClicked: {
-                    settings.language = "de_AT.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-
-            AppButton {
                 visible: settings.language !== "fr_FR.qm"
-                text: qsTr("Switch to fr_FR")
+                text: "FR"
                 onClicked: {
                     settings.language = "fr_FR.qm"
                     nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
@@ -90,17 +109,17 @@ AppPage {
             }
 
             AppButton {
-                visible: settings.language !== "cn_CN.qm"
-                text: qsTr("Switch to cn_CN")
+                visible: settings.language !== "ru_RU.qm"
+                text: "RU"
                 onClicked: {
-                    settings.language = "cn_CN.qm"
+                    settings.language = "ru_RU.qm"
                     nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
                 }
             }
 
             AppButton {
                 visible: settings.language !== "hu_HU.qm"
-                text: qsTr("Switch to hu_HU")
+                text: "HU"
                 onClicked: {
                     settings.language = "hu_HU.qm"
                     nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
@@ -113,7 +132,7 @@ AppPage {
         id: mMultipleChoice
 
         visible: false
-        numOfQuestions: 3
+        numOfQuestions: 4
     }
     TestCreativity {
         id: mTestCreativity
@@ -149,5 +168,13 @@ AppPage {
     }
     function addScore() {
         mPage.score++
+    }
+
+    function toFileName(text) {
+        text = text.toString()
+        if (text.includes(' ')) {
+            text = text.replace(" ", "_")
+        }
+        return text + ".csv"
     }
 }
