@@ -92,7 +92,10 @@ Item {
     }
 
     function getNumber() {
-        var firstNum = Math.floor(Math.random() * 3+2)
+        var firstNum = Math.floor(Math.random() * 9+1)
+        if (firstNum === 3) {
+            firstNum = 2
+        }
         nums.push(firstNum)
         var i
         for (i = 0; i < firstXNumber; i++) {
