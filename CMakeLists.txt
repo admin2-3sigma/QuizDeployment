@@ -34,7 +34,7 @@ list(REMOVE_ITEM AssetsFiles ${QmlFiles})
 
 
 # Add a .ts file for every language your app supports:
-set(TsFiles i18n/de_DE.ts i18n/de_AT.ts i18n/en_EN.ts i18n/cn_CN.ts i18n/fr_FR.ts)
+set(TsFiles i18n/de_DE.ts i18n/de_AT.ts i18n/en_EN.ts i18n/cn_CN.ts i18n/fr_FR.ts i18n/hu_HU.ts)
 
 qt_add_executable(appQuizApp
     main.cpp

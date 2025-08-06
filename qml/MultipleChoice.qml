@@ -50,7 +50,7 @@ Item {
         answerText2: qsTr("K")
         answerText3: qsTr("4")
         answerText4: qsTr("7")
-        pSolutions: [false, true, false, true]
+        pSolutions: [true, false, false, true]
         pNextQuestion: mTestCreativity
     }
 
