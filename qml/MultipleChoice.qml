@@ -7,12 +7,13 @@ Item {
     anchors.fill: parent
 
     property int numOfQuestions:3
+    property string clickAsk: qsTr(" (Please click on all good answers)")
 
 
     MultipeChoiceQuestion {
         id: question1
-        timer: 60
-        questionText: qsTr("All birds have feathers. A penguin is a bird.")
+        timer: 70
+        questionText: qsTr("All birds have feathers. A penguin is a bird. ") + clickAsk
         answerText1: qsTr("If an animal has feathers, then it is a bird.")
         answerText2: qsTr("If something is a bird, then it has feathers.")
         answerText3: qsTr("Only birds have feathers.")
@@ -22,8 +23,8 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question2
-        timer: 60
-        questionText: qsTr("Everyone who graduates from medical school is a doctor.")
+        timer: 70
+        questionText: qsTr("Everyone who graduates from medical school is a doctor.") + clickAsk
         answerText1: qsTr("Everyone who is a doctor graduated from medical school.")
         answerText2: qsTr("Some doctors didn’t go to medical school.")
         answerText3: qsTr("Only doctors go to medical school")
@@ -33,8 +34,8 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question3
-        timer: 60
-        questionText: qsTr("If it is raining, then the ground is wet.")
+        timer: 70
+        questionText: qsTr("If it is raining, then the ground is wet.") + clickAsk
         answerText1: qsTr("If the ground is wet, then it is raining")
         answerText2: qsTr("If the ground is not wet, then it is not raining.")
         answerText3: qsTr("If it is not raining, then the ground is not wet.")
@@ -44,8 +45,8 @@ Item {
     }
     MultipeChoiceQuestion {
         id: question4
-        timer: 100
-        questionText: qsTr("If a card has a vowel on it, then it has an even number on the other side. You see these four cards: A | K | 4 | 7. Which card must you turn to test if the rule is true?")
+        timer: 110
+        questionText: qsTr("Every card has a letter on one side, and a number on the other side. If a card has a vowel on it, then it has an even number on the other side. You see these four cards: A | K | 4 | 7. Which card must you turn to test if the rule is true?") + clickAsk
         answerText1: qsTr("A")
         answerText2: qsTr("K")
         answerText3: qsTr("4")

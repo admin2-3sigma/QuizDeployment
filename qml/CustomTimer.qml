@@ -30,7 +30,7 @@ Item {
     Text {
         anchors.centerIn: parent
         font.pointSize: 32
-        text: time.toString()
+        text: formatTime(time)
     }
 
 
@@ -41,5 +41,11 @@ Item {
 
     function stopTimer() {
         countdown.stop()
+    }
+
+    function formatTime(seconds) {
+        var mins = Math.floor(seconds / 60)
+        var secs = seconds % 60
+        return mins + ":" + (secs < 10 ? "0" + secs : secs)
     }
 }
