@@ -18,7 +18,7 @@ AppPage {
             spacing: 10
             Text {
                 id: numMultipleChoiceInput
-                text: "Number of multiple choice questions (1 to 4; default is 3)"
+                text: "Number of multiple choice questions (1 to 4; default is 4)"
                 font.pixelSize: 40
             }
 
