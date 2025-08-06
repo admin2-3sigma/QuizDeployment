@@ -10,23 +10,23 @@ Item {
         id: question1
         timer: 30
         pNextQuestion: question2
-        myFunction: function(num, i) {
+        myFunction: function(num, _) {
             return num + 7
         }
     }
     SeriesTestQuestion {
         id: question2
-        timer: 50
+        timer: 60
         pNextQuestion: question3
-        myFunction: function(num, i) {
+        myFunction: function(num, _) {
             return num*2+3
         }
     }
     SeriesTestQuestion {
         id: question3
-        timer: 50
+        timer: 60
         pNextQuestion: question4
-        myFunction: function(num, i) {
+        myFunction: function(num, _) {
             return num*2-3
         }
     }

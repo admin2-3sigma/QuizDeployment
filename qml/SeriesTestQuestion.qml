@@ -108,7 +108,7 @@ Item {
         var oldText = FileUtils.readFile(mPage.url)
         var newText = oldText + "\n" + questionText + "," + input.text + "," + (input.text === answer.toString())
         if (!FileUtils.writeFile(mPage.url, newText)) {
-            console.log("Failed to write output.csv")
+            console.log("Failed to write", mPage.url)
         }
         if (input.text === answer.toString()){
             mPage.addScore()
