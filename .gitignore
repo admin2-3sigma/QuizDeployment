@@ -1,0 +1,38 @@
+        1 file(s) copied.
+# Qt build folders
+build/
+*.user
+*.pro.user
+*.qmake.stash
+*.qmake.cache
+
+# CMake build
+CMakeLists.txt.user*
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.pyc
+
+# Other
+*.log
+
+assets/
+*.rcc
+*.qrc
+
+android/
+ios/
+macx/
