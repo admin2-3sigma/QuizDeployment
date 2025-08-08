@@ -28,3 +28,11 @@ cmake-build-*/
 
 # Other
 *.log
+
+assets/
+android/
+win/
+ios/
+macx/
+*.rcc
+*.qrc

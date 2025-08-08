@@ -7,7 +7,7 @@ Item {
     anchors.fill: parent
 
     property int numOfQuestions:4
-    property string clickAsk: "\n*" + qsTr("YOU MUST CLICK ON ALL GOOD ANSWERS") + "\n\n"
+    property string clickAsk: "\n" + qsTr("What can you deduct from the following statement?") + "\n" + qsTr("(You must click on ALL good answers)") + "\n\n"
 
 
     MultipeChoiceQuestion {

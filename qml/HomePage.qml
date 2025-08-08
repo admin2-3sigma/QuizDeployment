@@ -86,46 +86,6 @@ AppPage {
                 start.visible = false
             }
         }
-        Row {
-            anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 10
-
-            AppButton {
-                visible: settings.language !== "en_EN.qm"
-                text: "EN"
-                onClicked: {
-                    settings.language = "en_EN.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-
-            AppButton {
-                visible: settings.language !== "fr_FR.qm"
-                text: "FR"
-                onClicked: {
-                    settings.language = "fr_FR.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-
-            AppButton {
-                visible: settings.language !== "ru_RU.qm"
-                text: "RU"
-                onClicked: {
-                    settings.language = "ru_RU.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-
-            AppButton {
-                visible: settings.language !== "hu_HU.qm"
-                text: "HU"
-                onClicked: {
-                    settings.language = "hu_HU.qm"
-                    nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
-                }
-            }
-        }
     }
 
     MultipleChoice {

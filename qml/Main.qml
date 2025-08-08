@@ -2,6 +2,7 @@ import Felgo
 import QtQuick
 
 GameWindow {
+    id: mainWindow
     // You get free licenseKeys from https://felgo.com/licenseKey
     // With a licenseKey you can:
     //  * Publish your games & apps for the app stores
@@ -12,10 +13,10 @@ GameWindow {
     NavigationStack {
         id: nav
 
-        initialPage: Qt.resolvedUrl("HomePage.qml")
+        initialPage: Qt.resolvedUrl("LanguageChoice.qml")
     }
     Component.onCompleted: {
         settings.language = "en_EN.qm"
-        nav.clearAndPush(Qt.resolvedUrl("HomePage.qml"))
+        nav.clearAndPush(Qt.resolvedUrl("LanguageChoice.qml"))
     }
 }
