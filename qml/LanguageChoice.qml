@@ -6,6 +6,10 @@ AppPage {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         spacing: 10
+        Text {
+            text: "Current language pack: " + settings.language
+            font.pixelSize: 32
+        }
         Row {
             spacing: 10
 
